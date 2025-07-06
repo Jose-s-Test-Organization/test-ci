@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Git
         run: |
@@ -21,3 +23,5 @@ jobs:
           git commit --allow-empty --no-verify -m "test commit"
           git tag $(date +"%Y-%m-%d_%H-%M-%S")
           git push --follow-tags --verbose
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
