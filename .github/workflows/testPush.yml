@@ -23,5 +23,5 @@ jobs:
       - name: Push
         run: |
           git commit --allow-empty --no-verify -m "test commit"
-          git tag $(date -Iseconds)
+          git tag $(date +"%Y-%m-%d_%H-%M-%S")
           git push --follow-tags --verbose
