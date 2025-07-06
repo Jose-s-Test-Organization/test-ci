@@ -1,4 +1,6 @@
 name: Test Push
+permissions:
+  contents: write
 on: workflow_dispatch
 jobs:
   publish-stable:
