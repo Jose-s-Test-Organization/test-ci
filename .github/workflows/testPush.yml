@@ -14,8 +14,6 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Commit & Push
-        env: 
-          GITHUB_TOKEN: ${{ secrets.PAT }}
         run: |
           git config user.name "José Pereira"
           git config user.email "219649101+jomifepe-alt@users.noreply.github.com"
