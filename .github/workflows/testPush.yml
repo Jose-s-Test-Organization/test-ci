@@ -11,14 +11,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
 
       - name: Commit & Push
         run: |
-          git config --local user.name "José Pereira"
-          git config --local user.email "219649101+jomifepe-alt@users.noreply.github.com"
+          git config user.name "José Pereira"
+          git config user.email "219649101+jomifepe-alt@users.noreply.github.com"
           git commit --allow-empty --no-verify -m "test commit"
           git tag $(date +"%Y-%m-%d_%H-%M-%S")
           git push --follow-tags --verbose
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
